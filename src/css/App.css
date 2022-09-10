@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --first-color: #160c28;
+  --second-color: #22133e;
+  --third-color: #D90368;
+  --fourth-color: #f8f6f6;
+  --box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.4);
+  --font-big: 1.2rem;
+  --font-medium: 1rem;
+}
+
+body {
+  background-color: var(--first-color);
+  font-family: 'Nunito', sans-serif;
+  font-size: 62.5%;
+}

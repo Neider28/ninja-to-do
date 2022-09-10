@@ -1,0 +1,45 @@
+.create-container {
+  width: 85%;
+  height: 45px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 12% 88%;
+  background-color: var(--second-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  outline: none;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.create-container span {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--third-color);
+  font-size: 18px;
+}
+
+.create-container p {
+  width: 100%;
+  height: 45px;
+  margin: 0 auto;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-medium);
+  font-weight: 600;
+  color: var(--fourth-color);
+}
+
+@media (min-width: 600px) {
+  .create-container {
+    width: 400px;
+  }
+}

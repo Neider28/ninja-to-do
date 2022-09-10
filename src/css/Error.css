@@ -1,0 +1,18 @@
+.error-container {
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-image: url('https://i.postimg.cc/kMwwG4d9/error.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 600px) {
+  .error-container {
+    width: 350px;
+    height: 350px;
+  }
+}

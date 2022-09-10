@@ -1,0 +1,10 @@
+.counter {
+  width: 100%;
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--font-big);
+  line-height: 18px;
+  text-align: center;
+  color: var(--fourth-color);
+  margin-bottom: 25px;
+}

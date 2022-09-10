@@ -1,0 +1,18 @@
+.nothing-container {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-image: url('https://i.postimg.cc/HnW23GXf/create.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 600px) {
+  .nothing-container {
+    width: 350px;
+    height: 350px;
+  }
+}
