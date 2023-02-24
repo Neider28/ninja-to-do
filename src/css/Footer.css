@@ -1,9 +1,12 @@
 footer {
-  width: 100%;
+  width: 98%;
   height: auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
   padding: 50px 0px 30px;
   text-align: center;
   background-color: var(--third-color);
+  border-radius: 5px;
 }
 
 footer h3 {

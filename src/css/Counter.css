@@ -8,3 +8,19 @@
   color: var(--fourth-color);
   margin-bottom: 25px;
 }
+
+.counter--loading {
+  animation: fade 1s infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

@@ -4,16 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import '../css/Search.css';
 
-const Search = () => {
-  const { searchValue, setSearchValue } = useContext(AppContext);
-
+const Search = ({ searchValue, setSearchValue, loading }) => {
   const onSearchValueChange = (event) => {
     setSearchValue(event.target.value);
   };
 
   return (
-    <section className="search-container">
-      <input className="search-input" type="text" placeholder="Search" value={searchValue} onChange={onSearchValueChange}/>
+    <section className={`search-container ${loading && "search-container--loading"}`}>
+      <input 
+        className="search-input" 
+        type="text" 
+        placeholder="Search" 
+        value={searchValue} 
+        onChange={onSearchValueChange}
+        disabled={loading}
+      />
       <span><FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" /></span>
     </section>
   );

@@ -28,6 +28,22 @@
   color: var(--fourth-color);
 }
 
+.search-container--loading {
+  animation: fade 1s infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 .search-container span {
   width: 40px;
   height: 45px;

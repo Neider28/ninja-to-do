@@ -1,12 +1,11 @@
 import React from 'react';
-import { AppContext } from '../context/AppContext.js';
 import '../css/Counter.css';
 
-const Counter = () => {
-  const { totalToDo, completedToDo } = React.useContext(AppContext);
-
+const Counter = ({ totalToDo, completedToDo, loading }) => {
   return (
-    <h2 className="counter">You have completed {completedToDo} of {totalToDo} TODOs</h2>
+    <h2 className={`counter ${loading && "counter--loading"}`}>
+      You have completed {completedToDo} of {totalToDo} TODOs
+    </h2>
   );
 };
 

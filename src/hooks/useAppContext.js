@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
 const useAppContext = () => {
-    const { item: ToDo, saveItem: saveToDo, loading, error } = useLocalStorage('ToDo_V1', []);
+    const { item: ToDo, saveItem: saveToDo, loading, error, synchronize: synchronizeTODOS } = useLocalStorage('ToDo_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
 
@@ -56,7 +56,8 @@ const useAppContext = () => {
         completeToDo,
         deleteToDo,
         openModal,
-        setOpenModal
+        setOpenModal,
+        synchronizeTODOS
     };
 };
 

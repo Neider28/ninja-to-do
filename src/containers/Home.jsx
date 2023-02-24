@@ -9,21 +9,49 @@ import { Modal } from '../components/Modal.jsx';
 import { Error } from '../components/Error.jsx';
 import { Loading } from '../components/Loading.jsx';
 import { Nothing } from '../components/Nothing.jsx';
+import { NothingResults } from '../components/NothingResults.jsx';
+import { ChangeAlert } from '../components/ChangeAlert.jsx';
 import { AppContext } from '../context/AppContext.js';
 
 const Home = () => {
-  const {openModal, searchedToDo, completeToDo, deleteToDo, error, loading} = useContext(AppContext);
+  const {
+    openModal, 
+    searchedToDo, 
+    completeToDo, 
+    deleteToDo, 
+    error, 
+    loading,
+    totalToDo, 
+    completedToDo,
+    searchValue, 
+    setSearchValue,
+    synchronizeTODOS
+  } = useContext(AppContext);
 
   return (
-    <section className="Main">
-      <Counter />
-      <Search />
+    <main className="Main">
+      <Counter
+        totalToDo={totalToDo}
+        completedToDo={completedToDo}
+        loading={loading}
+      />
+      <Search 
+        searchValue={searchValue} 
+        setSearchValue={setSearchValue}
+        loading={loading}
+      />
       <CreateTODO />
-      <List>
-        {error && <Error />}
-        {loading && <Loading />}
-        {(!loading && !searchedToDo.length) && <Nothing />}
-        {searchedToDo.map(todo => (
+      <List 
+        error={error}
+        loading={loading}
+        searchedToDo={searchedToDo}
+        totalToDo={totalToDo}
+        onError={() => <Error />}
+        onLoading={() => <Loading />}
+        onEmpty={() => <Nothing />}
+        onEmptySearchResults={() => <NothingResults searchText={searchValue} />}
+      >
+        {(todo) => (
           <Item
             key={todo.text}
             text={todo.text}
@@ -31,14 +59,17 @@ const Home = () => {
             onComplete={() => completeToDo(todo.text)}
             onDelete={() => deleteToDo(todo.text)}
           />
-        ))}
+        )}
       </List>
       {openModal && (
         <Modal>
           <FormTODO />
         </Modal>
       )}
-    </section>
+      <ChangeAlert 
+         synchronize={synchronizeTODOS}
+      />
+    </main>
   );
 };
 
